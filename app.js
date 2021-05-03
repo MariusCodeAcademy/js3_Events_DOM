@@ -37,17 +37,51 @@ inverBtn.addEventListener("click", function () {
 const generateListBtn = document.querySelector(".generateList");
 const listArticleEL = document.querySelector(".listArticle");
 
-generateListBtn.addEventListener("click", generateList);
-
+generateListBtn.addEventListener("click", generateListStringWay);
+const colorsArr = ["green", "blue", "yellow"];
 function generateList() {
-  const colorsArr = ["green", "blue", "yellow"];
   const ulEl = document.createElement("ul");
   colorsArr.forEach((spava) => {
     // sukuriam li el
     const newLi = document.createElement("li");
     newLi.textContent = spava;
+    // prideti eventLIstener
+    newLi.addEventListener("click", invertLiHandler);
     // idedam li i ul
     ulEl.append(newLi);
   });
+  // isvalom article pries irasant reiksmes
+  listArticleEL.innerHTML = "";
   listArticleEL.appendChild(ulEl);
+}
+
+function generateListStringWay() {
+  // neturim galimybes uzdeti event listeneri el sukurimo vietoje
+  let rezultString = `
+    <ul>
+        ${colorsArr.map((c) => "<li>" + c + "</li>").join("")}
+    </ul>
+    `;
+  listArticleEL.innerHTML = rezultString;
+  makeLiActive();
+}
+
+// uzdeti event listenerius naujai sukurtiem li el
+// nusitaikyti i el su querySelectorALl ir gaunam node list
+// kuram galim atlikti foreach
+function makeLiActive() {
+  const naujiLiEl = document.querySelectorAll(".listArticle li");
+  console.log("naujiLiEl", naujiLiEl);
+  naujiLiEl.forEach((color) => {
+    color.addEventListener("click", invertLiHandler);
+  });
+}
+
+// uzdeti event listenerius sugeneruotiems el
+// paspaudus li el ta el uzdeti jam klase inverted
+function invertLiHandler(event) {
+  console.log(event.target);
+  //   console.log(this);
+  // event.target - rodo i el kuris isvkiete funkcija
+  this.classList.toggle("invertTitle");
 }
