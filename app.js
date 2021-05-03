@@ -91,7 +91,7 @@ const inputField = document.getElementById("input");
 const outputDiv = inputField.nextElementSibling;
 
 // ivesties lauko eventas yra input, keydown, keyUp ir kt
-// inputField.addEventListener("input", addTextToOutput);
+inputField.addEventListener("input", addTextToOutput);
 
 inputField.addEventListener("keyup", function (event) {
   //   console.log("ar veikia");
@@ -99,16 +99,18 @@ inputField.addEventListener("keyup", function (event) {
   //   console.log(event.key);
   if (event.key === "Enter") {
     // alert("paspaudei enter");
-    addTextToOutput();
+    addTextToOutput(null, "clear");
   }
 });
 
-function addTextToOutput() {
+function addTextToOutput(event, toClear = null) {
   //   console.log(event);
   // gaunam ivesties reiksme
   let ivesta = inputField.value;
   //   console.log(inputField.value);
   //   console.log(event.target.value);
   //   console.log(this.value);
-  outputDiv.innerHTML = `<p>${ivesta}</p>`;
+  outputDiv.innerHTML = `<p>${ivesta.toUpperCase()}</p>`;
+  // pravalyti lauka jei paspaudem enter
+  if (toClear) inputField.value = "";
 }
