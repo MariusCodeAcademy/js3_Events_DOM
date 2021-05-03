@@ -5,9 +5,22 @@
 // susikurti mygtukus:
 
 // 2. mygdukas kuris padaro body spalva juoda ir texta balta
+
 // 3. [html] mygtukas po kuriuo sukuriam div. padarom diva 100px
 // x 100px su apvadu
-// [js]padadom kad paspaudus mygtuka pasikeistu div spalva
+// [js]padadom kad paspaudus mygtuka pasikeistu div spalva i coral
+const colorBtnEl = document.getElementById("colorBtn");
+const colorDivEl = document.querySelector(".color-div");
+let flag = true;
+colorBtnEl.addEventListener("click", () => {
+  if (flag === true) {
+    colorDivEl.style.backgroundColor = "coral";
+    flag = false;
+  } else {
+    colorDivEl.style.backgroundColor = "white";
+    flag = true;
+  }
+});
 
 // 4. po treciu mygtuku sugeneruoti rikiuota sarasa su texktu
 // item_1, item_2, item_3
@@ -18,7 +31,7 @@
 // sukurti mygtuka nuorodu desineje ir kad paspaudus mygtuka
 // nuorodos pasisleptu ir liktu tik burger mygtukas kuri paspaudus vel matytit nuorodas
 
-// 6 sukurti ivesties lauka htmle, salia mygtuka
+// 6 [html] sukurti ivesties lauka htmle, salia mygtuka
 // 6.1 padaryti kad ivedant teksta i lauka tekstas atsivaizduotu mygtuke
 // 6.2 padaryti kad yvendant tekstas atsivaizduotu H1 elemente documento virsuje
 // 6.3 padaryti kad ivedus spalva angliskai i ivesties lauka dokumento body
@@ -28,10 +41,15 @@
 // 7. prideti 4tu punktu sukurtam sarasui eventlistenerius kad paspaudus ta el jam
 // uzsidetu klase .active . aprasyti klase kad el isiskirtu vizualiai is kitu
 
-// 8 sukurti html dar viena mygtuka su ivesties lauku ir divu 100px aukscio
+// 8 [html] sukurti html dar viena mygtuka su ivesties lauku ir divu 100px aukscio
 // ivesti i lauka keturias spalvas angiskai atskirtas tarpu
-// paspaudus mygtuka turetu keistis divo fono spalva is eiles pagal ivestas spalvas.
+// paspaudus mygtuka turetu keistis divo fono spalva is eiles pagal ivestas
+// spalvas.
 
-/// 9 dinamiskai js sugeneruoti modala ir atvaizduoti ji paspausus html sukurta
+/// 9 dinamiskai js sugeneruoti modala ir atvaizduoti ji paspausus htmle sukurta
 // mygtuka. Modale yra antraste paragrafas ir mygtukas
 // 9.1 Modale turetu buti mygtukas close, kuri pasalina sukurta modala is DOM
+
+// 9.2 sukurti siek tiek permatoma juoda fona kuris atsiranda kai atsiranda
+// modalas ir kuris dengia viska isskyrus modal.
+// paspaudus juoda fona uzsidaro modal
