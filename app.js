@@ -85,3 +85,30 @@ function invertLiHandler(event) {
   // event.target - rodo i el kuris isvkiete funkcija
   this.classList.toggle("invertTitle");
 }
+
+// paimti ivesties lauko teksta ir atvaizduoti juos zemiau esanciame div
+const inputField = document.getElementById("input");
+const outputDiv = inputField.nextElementSibling;
+
+// ivesties lauko eventas yra input, keydown, keyUp ir kt
+// inputField.addEventListener("input", addTextToOutput);
+
+inputField.addEventListener("keyup", function (event) {
+  //   console.log("ar veikia");
+
+  //   console.log(event.key);
+  if (event.key === "Enter") {
+    // alert("paspaudei enter");
+    addTextToOutput();
+  }
+});
+
+function addTextToOutput() {
+  //   console.log(event);
+  // gaunam ivesties reiksme
+  let ivesta = inputField.value;
+  //   console.log(inputField.value);
+  //   console.log(event.target.value);
+  //   console.log(this.value);
+  outputDiv.innerHTML = `<p>${ivesta}</p>`;
+}
