@@ -30,4 +30,24 @@ const inverBtn = document.getElementById("inverBtn");
 // 3 dedam eventListener ant mygtuko
 inverBtn.addEventListener("click", function () {
   console.log("Invert btn works");
+  h1El.classList.toggle("invertTitle");
 });
+
+// Generate list
+const generateListBtn = document.querySelector(".generateList");
+const listArticleEL = document.querySelector(".listArticle");
+
+generateListBtn.addEventListener("click", generateList);
+
+function generateList() {
+  const colorsArr = ["green", "blue", "yellow"];
+  const ulEl = document.createElement("ul");
+  colorsArr.forEach((spava) => {
+    // sukuriam li el
+    const newLi = document.createElement("li");
+    newLi.textContent = spava;
+    // idedam li i ul
+    ulEl.append(newLi);
+  });
+  listArticleEL.appendChild(ulEl);
+}
