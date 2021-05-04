@@ -5,7 +5,13 @@
 // susikurti mygtukus:
 
 // 2. mygdukas kuris padaro body spalva juoda ir texta balta
+const invertBtn = document.getElementById("invert");
+invertBtn.addEventListener("click", function () {
+  console.log("ivyko invert");
 
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "#fff";
+});
 // 3. [html] mygtukas po kuriuo sukuriam div. padarom diva 100px
 // x 100px su apvadu
 // [js]padadom kad paspaudus mygtuka pasikeistu div spalva i coral
@@ -29,7 +35,8 @@ colorBtnEl.addEventListener("click", () => {
 
 // 5 [html] sukurti nav, [js] kurioje butu 3-5 nuorodos
 // sukurti mygtuka nuorodu desineje ir kad paspaudus mygtuka
-// nuorodos pasisleptu ir liktu tik burger mygtukas kuri paspaudus vel matytit nuorodas
+// nuorodos pasisleptu ir liktu tik burger mygtukas kuri paspaudus
+// matytit nuorodas
 
 // 6 [html] sukurti ivesties lauka htmle, salia mygtuka
 // 6.1 padaryti kad ivedant teksta i lauka tekstas atsivaizduotu mygtuke
@@ -53,3 +60,9 @@ colorBtnEl.addEventListener("click", () => {
 // 9.2 sukurti siek tiek permatoma juoda fona kuris atsiranda kai atsiranda
 // modalas ir kuris dengia viska isskyrus modal.
 // paspaudus juoda fona uzsidaro modal
+
+// 10 accordion
+// kai uzsikrauna psl atidarytas buna viena el pats pirmas
+// spaudizant ant antrastes accordiono paragrafo tekstas pasidaro matomas
+// graziai issciplecia is virsaus i apacia (vertikaliai)
+// extra pakeisti rodykle kad rodytu i desine kai matosi tekstas
