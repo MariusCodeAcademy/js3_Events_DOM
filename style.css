@@ -1,0 +1,47 @@
+body {
+  padding: 1%;
+}
+* {
+  margin: 0;
+}
+.color-div {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+}
+
+.accordion {
+  /* display: none; */
+  padding: 15px;
+  margin: 5% auto;
+  width: 300px;
+  border: 1px solid #000;
+}
+.accordion-item p {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.accordion-item.open p {
+  display: block;
+}
+.accordion h4 {
+  cursor: pointer;
+}
+
+.main-nav.hide a {
+  display: none;
+}
+.main-nav button {
+  float: right;
+}
+.active {
+  color: coral;
+  background: darkgrey;
+  border: 1px solid #000;
+}
+.spalvos {
+  border: 1px solid #000;
+  height: 150px;
+}

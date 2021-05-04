@@ -167,3 +167,25 @@ spalvosBtn.addEventListener("click", function () {
 // spaudizant ant antrastes accordiono paragrafo tekstas pasidaro matomas
 // graziai issciplecia is virsaus i apacia (vertikaliai)
 // extra pakeisti rodykle kad rodytu i desine kai matosi tekstas
+
+// 10.1 kai paspaudziam ant accordiono title
+// gaunu console log
+// togglinam tam el klase 'open'
+//
+const accordionContainer = document.querySelector(".accordion");
+
+const h4Elementai = accordionContainer.querySelectorAll("h4");
+
+console.log(h4Elementai);
+
+h4Elementai.forEach((h4) => {
+  h4.addEventListener("click", function () {
+    console.log("pataikei ant h4");
+    h4.parentElement.classList.toggle("open");
+    if (h4.parentElement.classList.contains("open")) {
+      h4.nextElementSibling.style.maxHeight = h4.nextElementSibling.scrollHeight + "px";
+    } else {
+      h4.nextElementSibling.style.maxHeight = 0;
+    }
+  });
+});

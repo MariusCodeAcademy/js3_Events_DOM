@@ -5,45 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasks</title>
-    <style>
-      body {
-        padding: 1%;
-      }
-      * {
-        margin: 0;
-      }
-      .color-div {
-        display: inline-block;
-        border: 1px solid #000;
-        width: 100px;
-        height: 100px;
-      }
-      .accordion {
-        display: none;
-        padding: 15px;
-        margin: 5% auto;
-        width: 300px;
-        border: 1px solid #000;
-      }
-      .accordion h4 {
-        cursor: pointer;
-      }
-      .main-nav.hide a {
-        display: none;
-      }
-      .main-nav button {
-        float: right;
-      }
-      .active {
-        color: coral;
-        background: darkgrey;
-        border: 1px solid #000;
-      }
-      .spalvos {
-        border: 1px solid #000;
-        height: 150px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
     <script src="./eventTasks.js" defer></script>
   </head>
   <body>
@@ -83,7 +45,7 @@
 
     <article class="accordion">
       <div class="accordion-item open">
-        <h4>Some title<span>&#11015;</span></h4>
+        <h4>Some title <span> -</span></h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta nostrum eius
           praesentium consectetur in culpa assumenda quam nisi et, officia nulla corporis ad
@@ -91,7 +53,7 @@
         </p>
       </div>
       <div class="accordion-item">
-        <h4>Other stuff<span>&#11015;</span></h4>
+        <h4>Other stuff<span>+</span></h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta nostrum eius
           praesentium consectetur in culpa assumenda quam nisi et, officia nulla corporis ad
@@ -99,7 +61,7 @@
         </p>
       </div>
       <div class="accordion-item">
-        <h4>Important note <span>&#11015;</span></h4>
+        <h4>Important note <span>+</span></h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta nostrum eius
           praesentium consectetur in culpa assumenda quam nisi et, officia nulla corporis ad
@@ -108,7 +70,7 @@
         </p>
       </div>
       <div class="accordion-item">
-        <h4>JS is great<span>&#11015;</span></h4>
+        <h4>JS is great<span>+</span></h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta nostrum eius
           praesentium consectetur in culpa assumenda quam nisi et, officia nulla corporis ad
