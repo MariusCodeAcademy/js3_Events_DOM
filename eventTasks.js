@@ -50,6 +50,7 @@ let counter = 4;
 addItemToListBtn.addEventListener("click", function () {
   // sukurti nauja el nuo 4 ir didinti skaiciu ir toliau kurti el
   const newLi = document.createElement("li");
+
   newLi.textContent = "item_" + counter++;
   ulEl4.appendChild(newLi);
 });
@@ -115,11 +116,43 @@ mygtukas.addEventListener("click", function () {
 // ta el jam
 // uzsidetu klase .active . aprasyti klase kad el isiskirtu vizualiai is kitu
 console.log(ulEl4.tagName === "UL");
+ulEl4.addEventListener("click", function (event) {
+  const elementasAntKurioPaspaudziau = event.target;
+  console.log(elementasAntKurioPaspaudziau.tagName);
+  if (elementasAntKurioPaspaudziau.tagName === "LI") {
+    elementasAntKurioPaspaudziau.classList.toggle("active");
+  }
+});
 
 // 8 [html] sukurti html dar viena mygtuka su ivesties lauku ir divu 100px aukscio
-// ivesti i lauka keturias spalvas angiskai atskirtas tarpu
+// ivesti i lauka keturias spalvas angliskai atskirtas tarpu
 // paspaudus mygtuka turetu keistis divo fono spalva is eiles pagal ivestas
 // spalvas.
+
+// Psiausdo kodas
+const astuoniEL = document.querySelector(".astuoni");
+const spalvosInput = astuoniEL.firstElementChild;
+const spalvosBtn = astuoniEL.lastElementChild;
+const spalvuPaleteNudazumui = astuoniEL.nextElementSibling;
+// 1. gaunam teksta
+let countSpalvos = 0;
+spalvosBtn.addEventListener("click", function () {
+  console.log(spalvosInput.value);
+  // 2 pasiverciam teksta i masyva
+  const spalvuMasyvas = spalvosInput.value.trim().split(" ");
+  let visoSplavuYra = spalvuMasyvas.length;
+  console.log(spalvuMasyvas);
+  // nudazyti
+
+  spalvuPaleteNudazumui.style.backgroundColor = spalvuMasyvas[countSpalvos++];
+  if (countSpalvos === visoSplavuYra) {
+    countSpalvos = 0;
+  }
+});
+
+// 3 paspaudimo metu imtam visk kita spalva is masyvo kol baigias
+
+// 4. ir tiek
 
 /// 9 dinamiskai js sugeneruoti modala ir atvaizduoti ji paspausus htmle sukurta
 // mygtuka. Modale yra antraste paragrafas ir mygtukas
