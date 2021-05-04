@@ -73,15 +73,43 @@ const sestasDiv = document.getElementById("sestas");
 // sesto viduje taikomes i el su query selector
 const ivestiesLaukas = sestasDiv.querySelector("input");
 const mygtukas = sestasDiv.querySelector("button");
+const h1El = document.querySelector("h1");
 ivestiesLaukas.addEventListener("input", function () {
   // paimti reiksme is ivestes lauko ir atvaizduoti ja mygtko tekstu
   mygtukas.innerText = ivestiesLaukas.value;
+  // 6.2 padaryti kad yvendant tekstas atsivaizduotu H1 elemente documento virsuje
+  h1El.textContent = ivestiesLaukas.value;
+
+  // 6.3 padaryti kad ivedus spalva angliskai i ivesties lauka dokumento body
+  // taptu tokios spalvos
+  // paimti kas ivesta i input field ir nustatysi body baground
+  // color tokios spalvos
+  document.body.style.backgroundColor = ivestiesLaukas.value;
 });
 
-// 6.2 padaryti kad yvendant tekstas atsivaizduotu H1 elemente documento virsuje
-// 6.3 padaryti kad ivedus spalva angliskai i ivesties lauka dokumento body
-// taptu tokios spalvos
-// 6.4 padaryti kad paspaudus mygtuka ivestas tekstas butu atvaizduotas is priesingos puses
+// 6.4 padaryti kad paspaudus mygtuka ivestas tekstas butu atvaizduotas
+// is priesingos puses
+mygtukas.addEventListener("click", function () {
+  // 1. gauti teksto reikme
+  let ivestasTekstas = ivestiesLaukas.value;
+  console.log("Pasaudei, ivyks invert ", ivestasTekstas);
+
+  // 2. apversti ja is priesingos puses
+  let masyvasIsTexto = ivestasTekstas.split("");
+  console.log("masyvasIsTexto", masyvasIsTexto);
+
+  let priesingaPuseMasyvas = masyvasIsTexto.reverse();
+  console.log("priesingaPuseMasyvas", priesingaPuseMasyvas);
+
+  let textasIsMasyvo = priesingaPuseMasyvas.join("");
+  console.log("textasIsMasyvo", textasIsMasyvo);
+
+  // one line method chaining
+  textasIsMasyvo = ivestiesLaukas.value.split("").reverse().join("");
+
+  // 3. grazinti i vesties lauka
+  ivestiesLaukas.value = textasIsMasyvo;
+});
 
 // 7. prideti 4tu punktu sukurtam sarasui eventlistenerius kad paspaudus ta el jam
 // uzsidetu klase .active . aprasyti klase kad el isiskirtu vizualiai is kitu
