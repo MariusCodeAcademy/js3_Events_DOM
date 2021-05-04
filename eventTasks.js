@@ -111,8 +111,10 @@ mygtukas.addEventListener("click", function () {
   ivestiesLaukas.value = textasIsMasyvo;
 });
 
-// 7. prideti 4tu punktu sukurtam sarasui eventlistenerius kad paspaudus ta el jam
+// 7. prideti 4tu punktu sukurtam sarasui eventlistenerius kad paspaudus
+// ta el jam
 // uzsidetu klase .active . aprasyti klase kad el isiskirtu vizualiai is kitu
+console.log(ulEl4.tagName === "UL");
 
 // 8 [html] sukurti html dar viena mygtuka su ivesties lauku ir divu 100px aukscio
 // ivesti i lauka keturias spalvas angiskai atskirtas tarpu
