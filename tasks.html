@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasks</title>
     <style>
+      body {
+        padding: 1%;
+      }
       * {
         margin: 0;
       }
@@ -16,6 +19,7 @@
         height: 100px;
       }
       .accordion {
+        display: none;
         padding: 15px;
         margin: 5% auto;
         width: 300px;
@@ -24,11 +28,17 @@
       .accordion h4 {
         cursor: pointer;
       }
+      .main-nav.hide a {
+        display: none;
+      }
+      .main-nav button {
+        float: right;
+      }
     </style>
     <script src="./eventTasks.js" defer></script>
   </head>
   <body>
-    <h2>Antra uzduotis</h2>
+    <h1>Antra uzduotis</h1>
     <button id="invert">Invert background</button>
     <button id="colorBtn">Make color</button>
     <div class="color-div"></div>
@@ -39,8 +49,23 @@
     <div class="keturi">
       <ul></ul>
     </div>
+
+    <h3>5 uzduotis</h3>
+    <nav class="main-nav">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="home.html">Home</a>
+      <button>&#8801;</button>
+    </nav>
+
+    <h3>6 uzduotis</h3>
+    <div id="sestas">
+      <h4>6.1</h4>
+      <input type="text" />
+      <button>mygtukas</button>
+    </div>
     <article class="accordion">
-      <div class="accordion-item">
+      <div class="accordion-item open">
         <h4>Some title<span>&#11015;</span></h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta nostrum eius
@@ -61,7 +86,8 @@
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta nostrum eius
           praesentium consectetur in culpa assumenda quam nisi et, officia nulla corporis ad
-          adipisci aperiam rerum ut aliquid magni?
+          adipisci aperiam rerum ut aliquid magni? praesentium consectetur in culpa assumenda quam
+          nisi et, officia nulla corporis ad adipisci aperiam rerum ut aliquid magni?
         </p>
       </div>
       <div class="accordion-item">

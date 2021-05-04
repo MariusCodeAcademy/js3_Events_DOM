@@ -57,9 +57,27 @@ addItemToListBtn.addEventListener("click", function () {
 // sukurti mygtuka nuorodu desineje ir kad paspaudus mygtuka
 // nuorodos pasisleptu ir liktu tik burger mygtukas kuri paspaudus
 // matytit nuorodas
+// nusitaikom i navigacija
+const mainNavEl = document.querySelector(".main-nav");
+// nusitaikom i mygtuka navigacijos vidue
+const navToggleBtn = mainNavEl.lastElementChild;
+
+navToggleBtn.addEventListener("click", function () {
+  mainNavEl.classList.toggle("hide");
+});
 
 // 6 [html] sukurti ivesties lauka htmle, salia mygtuka
 // 6.1 padaryti kad ivedant teksta i lauka tekstas atsivaizduotu mygtuke
+// nusitaiko i diva sesi
+const sestasDiv = document.getElementById("sestas");
+// sesto viduje taikomes i el su query selector
+const ivestiesLaukas = sestasDiv.querySelector("input");
+const mygtukas = sestasDiv.querySelector("button");
+ivestiesLaukas.addEventListener("input", function () {
+  // paimti reiksme is ivestes lauko ir atvaizduoti ja mygtko tekstu
+  mygtukas.innerText = ivestiesLaukas.value;
+});
+
 // 6.2 padaryti kad yvendant tekstas atsivaizduotu H1 elemente documento virsuje
 // 6.3 padaryti kad ivedus spalva angliskai i ivesties lauka dokumento body
 // taptu tokios spalvos
