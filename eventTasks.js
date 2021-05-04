@@ -30,6 +30,19 @@ colorBtnEl.addEventListener("click", () => {
 
 // 4. po treciu mygtuku sugeneruoti rikiuota sarasa su texktu
 // item_1, item_2, item_3
+const outputKeturi = document.querySelector(".keturi");
+const ulEl4 = outputKeturi.firstElementChild;
+// IIFE - iffe - imediately invoked function expresion
+// automatiskai ivygdoma funkija
+(function () {
+  let str = "";
+  [1, 2, 3].forEach((num) => {
+    str += `<li>item_${num}</li>`;
+  });
+  ulEl4.innerHTML = str;
+})();
+// generate3();
+
 // sugeneruoti 3 itemus kai tik uzkraunam puslapi
 // generuoti papildoma itema kai paspaudziam mygtuka
 
