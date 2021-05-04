@@ -32,6 +32,7 @@ colorBtnEl.addEventListener("click", () => {
 // item_1, item_2, item_3
 const outputKeturi = document.querySelector(".keturi");
 const ulEl4 = outputKeturi.firstElementChild;
+// sugeneruoti 3 itemus kai tik uzkraunam puslapi
 // IIFE - iffe - imediately invoked function expresion
 // automatiskai ivygdoma funkija
 (function () {
@@ -43,9 +44,15 @@ const ulEl4 = outputKeturi.firstElementChild;
 })();
 // generate3();
 
-// sugeneruoti 3 itemus kai tik uzkraunam puslapi
 // generuoti papildoma itema kai paspaudziam mygtuka
-
+const addItemToListBtn = document.getElementById("addItemToList");
+let counter = 4;
+addItemToListBtn.addEventListener("click", function () {
+  // sukurti nauja el nuo 4 ir didinti skaiciu ir toliau kurti el
+  const newLi = document.createElement("li");
+  newLi.textContent = "item_" + counter++;
+  ulEl4.appendChild(newLi);
+});
 // 5 [html] sukurti nav, [js] kurioje butu 3-5 nuorodos
 // sukurti mygtuka nuorodu desineje ir kad paspaudus mygtuka
 // nuorodos pasisleptu ir liktu tik burger mygtukas kuri paspaudus
