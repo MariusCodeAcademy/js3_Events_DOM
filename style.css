@@ -4,7 +4,15 @@ body {
 * {
   margin: 0;
 }
+.back-drop {
+  background: rgba(31, 31, 31, 0.257);
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .modal {
   position: fixed;
   top: 10%;

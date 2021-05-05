@@ -157,13 +157,43 @@ spalvosBtn.addEventListener("click", function () {
 /// 9 dinamiskai js sugeneruoti modala ir atvaizduoti ji paspausus htmle sukurta
 // mygtuka. Modale yra antraste paragrafas ir mygtukas
 const modalBtn = document.getElementById("modal");
+drawModal();
+let modalEl = document.querySelector(".modal");
+console.log(modalEl);
 modalBtn.addEventListener("click", function () {
-  drawModal();
+  modalEl.classList.toggle("open");
+  createBackDrop();
 });
 function drawModal() {
   console.log("I am drawing modal");
+  let strHtml = `
+  <div class="modal">
+      <h3>Modal very important</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta autem fugiat laudantium
+        explicabo sapiente blanditiis quae laboriosam debitis dolores maxime?
+      </p>
+      <button>Destroy modal</button>
+    </div>
+  `;
+  document.body.insertAdjacentHTML("afterbegin", strHtml);
 }
+
+function createBackDrop() {
+  const modalBackDrop = document.createElement("div");
+  modalBackDrop.className = "back-drop";
+  document.body.insertAdjacentElement("afterbegin", modalBackDrop);
+}
+
 // 9.1 Modale turetu buti mygtukas close, kuri pasalina sukurta modala is DOM
+// nustaikykti i modal destroy mygtuka
+const destroyBtn = modalEl.querySelector("button");
+// sureaguoti i jo paspaudima
+destroyBtn.addEventListener("click", function () {
+  console.log("destroy");
+  // aptikus paspaudima pasaliti modal el is dom
+  modalEl.remove();
+});
 
 // 9.2 sukurti siek tiek permatoma juoda fona kuris atsiranda kai atsiranda
 // modalas ir kuris dengia viska isskyrus modal.
