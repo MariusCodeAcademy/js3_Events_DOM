@@ -5,7 +5,7 @@ body {
   margin: 0;
 }
 .back-drop {
-  background: rgba(31, 31, 31, 0.257);
+  background: rgba(31, 31, 31, 0);
 
   position: fixed;
   top: 0;

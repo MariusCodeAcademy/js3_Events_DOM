@@ -218,6 +218,11 @@ destroyBtn.addEventListener("click", function () {
   hideBackDrop();
 });
 
+// document.body.addEventListener("mouseleave", function () {
+//   toggleModal();
+//   showBackdrop();
+// });
+
 // 9.2 sukurti siek tiek permatoma juoda fona kuris atsiranda kai atsiranda
 // modalas ir kuris dengia viska isskyrus modal.
 // paspaudus juoda fona uzsidaro modal
