@@ -4,6 +4,22 @@ body {
 * {
   margin: 0;
 }
+
+.modal {
+  position: fixed;
+  top: 10%;
+  border: 1px solid #000;
+  padding: 1em;
+  background-color: #fff;
+  width: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-200%);
+  transition: transform 0.2s;
+}
+.modal.open {
+  transform: translateX(-50%) translateY(0);
+}
+
 .color-div {
   display: inline-block;
   border: 1px solid #000;

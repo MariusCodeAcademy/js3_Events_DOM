@@ -156,6 +156,13 @@ spalvosBtn.addEventListener("click", function () {
 
 /// 9 dinamiskai js sugeneruoti modala ir atvaizduoti ji paspausus htmle sukurta
 // mygtuka. Modale yra antraste paragrafas ir mygtukas
+const modalBtn = document.getElementById("modal");
+modalBtn.addEventListener("click", function () {
+  drawModal();
+});
+function drawModal() {
+  console.log("I am drawing modal");
+}
 // 9.1 Modale turetu buti mygtukas close, kuri pasalina sukurta modala is DOM
 
 // 9.2 sukurti siek tiek permatoma juoda fona kuris atsiranda kai atsiranda
