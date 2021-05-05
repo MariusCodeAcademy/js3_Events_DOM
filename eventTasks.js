@@ -157,13 +157,23 @@ spalvosBtn.addEventListener("click", function () {
 /// 9 dinamiskai js sugeneruoti modala ir atvaizduoti ji paspausus htmle sukurta
 // mygtuka. Modale yra antraste paragrafas ir mygtukas
 const modalBtn = document.getElementById("modal");
+let modalBackDrop;
 drawModal();
+createBackDrop();
+hideBackDrop();
 let modalEl = document.querySelector(".modal");
 console.log(modalEl);
 modalBtn.addEventListener("click", function () {
-  modalEl.classList.toggle("open");
-  createBackDrop();
+  console.log("Paspaudem Modal Mygtuka");
+
+  toggleModal();
+  showBackdrop();
 });
+
+function toggleModal() {
+  modalEl.classList.toggle("open");
+}
+
 function drawModal() {
   console.log("I am drawing modal");
   let strHtml = `
@@ -178,7 +188,7 @@ function drawModal() {
   `;
   document.body.insertAdjacentHTML("afterbegin", strHtml);
 }
-let modalBackDrop;
+
 function createBackDrop() {
   modalBackDrop = document.createElement("div");
   modalBackDrop.className = "back-drop";
@@ -187,6 +197,15 @@ function createBackDrop() {
 function hideBackDrop() {
   modalBackDrop.style.display = "none";
 }
+function showBackdrop() {
+  modalBackDrop.style.display = "block";
+}
+modalBackDrop.addEventListener("click", function () {
+  console.log("Paspaudziau backdrop");
+
+  hideBackDrop();
+  modalEl.classList.remove("open");
+});
 
 // 9.1 Modale turetu buti mygtukas close, kuri pasalina sukurta modala is DOM
 // nustaikykti i modal destroy mygtuka
@@ -196,6 +215,7 @@ destroyBtn.addEventListener("click", function () {
   console.log("destroy");
   // aptikus paspaudima pasaliti modal el is dom
   modalEl.remove();
+  hideBackDrop();
 });
 
 // 9.2 sukurti siek tiek permatoma juoda fona kuris atsiranda kai atsiranda
