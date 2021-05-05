@@ -178,11 +178,14 @@ function drawModal() {
   `;
   document.body.insertAdjacentHTML("afterbegin", strHtml);
 }
-
+let modalBackDrop;
 function createBackDrop() {
-  const modalBackDrop = document.createElement("div");
+  modalBackDrop = document.createElement("div");
   modalBackDrop.className = "back-drop";
   document.body.insertAdjacentElement("afterbegin", modalBackDrop);
+}
+function hideBackDrop() {
+  modalBackDrop.style.display = "none";
 }
 
 // 9.1 Modale turetu buti mygtukas close, kuri pasalina sukurta modala is DOM
